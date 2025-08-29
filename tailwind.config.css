@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Özel animasyonlar ve keyframe'ler */
+
+/* Alev titreşimi */
+@keyframes flameFlicker {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  25% { transform: scale(1.05) rotate(-2deg); opacity: 0.95; }
+  50% { transform: scale(0.95) rotate(2deg); opacity: 1; }
+  75% { transform: scale(1.1) rotate(-1deg); opacity: 0.9; }
+}
+.animate-flame {
+  animation: flameFlicker 1.5s infinite ease-in-out;
+}
+
+/* Duman yükselmesi */
+@keyframes smokeRise {
+  0% { opacity: 0; transform: translateY(0) scale(0.5); }
+  20% { opacity: 0.6; }
+  100% { opacity: 0; transform: translateY(-100px) scale(1.5) translateX(20px); }
+}
+.animate-smoke {
+  animation: smokeRise 3s forwards;
+}
+
+/* Rüzgar efekti */
+@keyframes windBlow {
+  0% { opacity: 0; transform: translateX(-50px); }
+  50% { opacity: 0.5; transform: translateX(0); }
+  100% { opacity: 0; transform: translateX(80px); }
+}
+.animate-wind {
+  animation: windBlow 1s ease-in-out;
+}
+
+/* Yıldız titremesi */
+@keyframes twinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.animate-twinkle {
+  animation: twinkle 3s infinite ease-in-out;
+}
